@@ -45,6 +45,8 @@
 
             if(!event.isEmpty) {
 
+
+
               $fs.style.display = 'block';
               $closeTimer.style.display = 'inline';
 
@@ -77,6 +79,24 @@
 
               $counter.innerHTML = second;
               second--
+
+              focus();
+              var listener = addEventListener('blur', function() {
+                if(document.activeElement === document.getElementById('google_ads_iframe_/239499832/BAI-TW_test_0')) {
+                  
+                  console.log('clicked');
+                  
+                  fetch('log.php?time=' + Date.now())
+                      .then(function(response) {
+                        
+                      return response.json();
+                      })
+                    .then(function(response) {
+                          console.log(response);
+                    });
+                }
+                  //removeEventListener('blur',listener);
+              });
 
             } else {
               console.log('empty');
