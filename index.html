@@ -103,7 +103,7 @@
                  
                   // Do something when the iframe is clicked (like firing an XHR request)
                 
-                  console.log('clicked');
+                  alert('clicked');
                   
                   $.get('https://192.168.0.122:443/wifi/log.php?time=' + Date.now())
                     .done(function(response) {

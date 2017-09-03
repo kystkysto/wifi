@@ -1,5 +1,7 @@
 <?php
 
+
+
   $data = array();
 
   switch($_SERVER['REQUEST_METHOD']) 
@@ -24,6 +26,7 @@
       file_put_contents('request.log', $log, FILE_APPEND);
   }
 
+  header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json');
   echo json_encode($data);
 ?>
