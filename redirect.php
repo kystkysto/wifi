@@ -11,5 +11,6 @@
 
   file_put_contents('request.log', $log, FILE_APPEND);
 
-  header("Location: $dl", true, 302);
+  echo $dl;
+  //header("Location: $dl", true, 302);
 ?>
