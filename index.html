@@ -44,8 +44,6 @@
         googletag.pubads().addEventListener('slotRenderEnded', function(event) {
           //if (event.slot === slotId) {
 
-            googletag.pubads().set('page_url', 'https://192.168.0.122:443/wifi/redirect.php?dl=test');
-
             console.log('rendered');
 
             if(!event.isEmpty) {
@@ -140,6 +138,7 @@
 
           // Declare any slots initially present on the page
         slot = googletag.defineSlot('/239499832/BAI-TW_test', [[300, 250], [320, 480], [300, 600]], slotId)
+        //.set('page_url', 'https://192.168.0.122:443/wifi/redirect.php?dl=test');
         .setClickUrl('https://192.168.0.122:443/wifi/redirect.php?dl=')
         .addService(googletag.pubads());
 
@@ -151,6 +150,8 @@
       googletag.cmd.push(function() {
 
         googletag.display(slotId);
+
+        console.log(googletag.pubads().get('page_url'));
         //googletag.pubads().refresh([slotId]);
         //console.log(googletag.content());
       });
