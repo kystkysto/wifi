@@ -46,6 +46,8 @@
 
             console.log('rendered');
 
+            console.log(googletag.pubads().get('page_url'));
+
             if(!event.isEmpty) {
 
               console.log(event.advertiserId);
@@ -150,8 +152,6 @@
       googletag.cmd.push(function() {
 
         googletag.display(slotId);
-
-        console.log(googletag.pubads().get('page_url'));
         //googletag.pubads().refresh([slotId]);
         //console.log(googletag.content());
       });
