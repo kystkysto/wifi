@@ -10,7 +10,7 @@
 
       //if(empty($_GET['time'])) return;
 
-      $log = time() . "\t" . $_GET['time'] . "\t" . $_SERVER['HTTP_USER_AGENT'] . "\n";
+      $log = "Click:\t" .  time() . "\t" . $_GET['time'] . "\t" . $_SERVER['HTTP_USER_AGENT'] . "\n";
 
       $data[] = $log;
       file_put_contents('request.log', $log, FILE_APPEND);
@@ -20,7 +20,7 @@
       break;
 
     default:
-      $log = time() . "\t" . $_SERVER['REQUEST_METHOD'] . $_SERVER['HTTP_USER_AGENT'] . "\n";
+      $log = "Request:\t" . time() . "\t" . $_SERVER['REQUEST_METHOD'] . $_SERVER['HTTP_USER_AGENT'] . "\n";
       
       $data[] = $log;
       file_put_contents('request.log', $log, FILE_APPEND);

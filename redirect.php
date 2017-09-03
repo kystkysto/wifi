@@ -7,7 +7,7 @@
   }
 
   $dl = $_GET['dl'];
-  $log = time() . "\t" . $_GET['dl'] . "\t" . $_SERVER['HTTP_USER_AGENT'] . "\n";
+  $log = "Redirect:\t" . time() . "\t" . $_GET['dl'] . "\t" . $_SERVER['HTTP_USER_AGENT'] . "\n";
 
   file_put_contents('request.log', $log, FILE_APPEND);
 
